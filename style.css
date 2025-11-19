@@ -1,0 +1,66 @@
+/* Global layout */
+body {
+  max-width: 850px;
+  margin: auto;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  padding: 40px 20px;
+  color: #1e1e1e;
+  background-color: #fdfdfb;
+}
+
+/* Forest green palette */
+:root {
+  --forest: #0b3d0b;
+  --forest-light: #145214;
+  --forest-pale: #e9f5e9;
+}
+
+/* Navigation */
+nav {
+  margin-bottom: 30px;
+  padding: 12px 0;
+  border-bottom: 2px solid var(--forest-light);
+}
+
+nav a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: var(--forest-light);
+  font-weight: 600;
+}
+
+nav a:hover {
+  color: var(--forest);
+  text-decoration: underline;
+}
+
+/* Headings */
+h1 {
+  margin-top: 0;
+  color: var(--forest);
+}
+
+h2, h3 {
+  color: var(--forest-light);
+}
+
+/* Links */
+a {
+  color: var(--forest-light);
+}
+
+a:hover {
+  color: var(--forest);
+}
+
+/* Sections */
+section {
+  margin-bottom: 40px;
+}
+
+/* Lists */
+ul {
+  padding-left: 20px;
+}
+
