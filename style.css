@@ -64,3 +64,30 @@ ul {
   padding-left: 20px;
 }
 
+.education-item {
+  margin-bottom: 0px;
+}.education-item {
+  margin-bottom: 18px;        /* reduced spacing */
+}
+
+.education-header {
+  font-weight: 600;
+  margin-bottom: 6px;         /* tight spacing before bullet list */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;                   /* spacing between inline elements */
+  color: #113d1a;             /* forest-green-friendly dark tone */
+}
+
+.education-header .separator {
+  color: #335c3b;             /* subtle separator styling */
+}
+
+.education-item ul {
+  margin: 4px 0 0 20px;       /* reduced spacing */
+  padding: 0;
+}
+
+.publication-item li {
+  margin-bottom: 10px;
+}
