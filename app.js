@@ -112,11 +112,17 @@ document.getElementById("predict-btn").addEventListener("click", () => {
 
     if (!course || !timeStr) continue;
 
-    const [seconds,uncert] = compTimes(parseTimeToSeconds(timeStr),course);
+    const parsedTime = parseTimeToSeconds(timeStr);
+
+    if (parsedTime === null) {
+      alert(`Invalid time format in row ${i}. Use hh:mm:ss or mm:ss`);
+      return;
+    }
+
+    const [seconds,uncert] = compTime(parsedTime,course);
 
     if (seconds === null) {
-      alert(`Invalid time format or course chosen in row ${i}. Use hh:mm:ss or mm:ss`);
-      return;
+      alert(`Invalid course chosen in row ${i}.`);
     }
 
     times.push(seconds);
