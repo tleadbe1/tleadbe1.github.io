@@ -19,15 +19,64 @@
     <h3>Running</h3>
     <p>
       I love cross country, track and field, and road racing. 
-      I'm currently an assistant cross country and track coach at <a href="https://sites.google.com/view/phsxc/home">Peninsula High School</a>. 
-      I previously ran for the <a href="https://www.philadelphiarunnertrackclub.com/">Philadelphia Runner Track Club</a>. 
+      I'm currently an assistant cross country and track coach at 
+      <a href="https://sites.google.com/view/phsxc/home">Peninsula High School</a>. 
+      I previously ran for the 
+      <a href="https://www.philadelphiarunnertrackclub.com/">Philadelphia Runner Track Club</a>. 
       My next big race is the 2026 Chicago Marathon. 
     </p>
+
     <h4>Useful links</h4>
     <ul>
-      <li>John Davis, Ph.D.'s <a href="https://runningwritings.com/">Running Writings</a> website and Steve Magness' <a href="https://www.youtube.com/stevemagness">YouTube</a> offer fantastic, free training advice.</li>
-      <li><a href="https://workoutsplitz.com">Splitz</a> is a handy tool for automatically recording structured workout sessions on Strava.</li>
+      <li>
+        John Davis, Ph.D.'s 
+        <a href="https://runningwritings.com/">Running Writings</a> website and 
+        Steve Magness' <a href="https://www.youtube.com/stevemagness">YouTube</a> 
+        offer fantastic, free training advice.
+      </li>
+      <li>
+        <a href="https://workoutsplitz.com">Splitz</a> is a handy tool for automatically
+        recording structured workout sessions on Strava.
+      </li>
     </ul>
+
+    <!-- ===== Race Time Predictor App ===== -->
+    <h4>Race Time Predictor</h4>
+
+    <p>
+      Estimate a race time on a target course using performances from other courses.
+    </p>
+
+    <div class="predictor-grid">
+      <!-- Row 1: Course selection -->
+      <select class="cell" id="course-1">
+        <option value="">Select course</option>
+        <option value="courseA">Course A</option>
+        <option value="courseB">Course B</option>
+      </select>
+      <select class="cell" id="course-2"></select>
+      <select class="cell" id="course-3"></select>
+      <select class="cell" id="course-4"></select>
+      <select class="cell" id="course-5"></select>
+
+      <!-- Row 2: Time input -->
+      <input class="cell" id="time-1" type="text" placeholder="hh:mm:ss">
+      <input class="cell" id="time-2" type="text" placeholder="hh:mm:ss">
+      <input class="cell" id="time-3" type="text" placeholder="hh:mm:ss">
+      <input class="cell" id="time-4" type="text" placeholder="hh:mm:ss">
+      <input class="cell" id="time-5" type="text" placeholder="hh:mm:ss">
+    </div>
+
+    <button id="predict-btn">Predict Time</button>
+
+    <div class="predictor-output">
+      <p><strong>Predicted time:</strong> <span id="predicted-time">—</span></p>
+      <p><strong>Uncertainty:</strong> <span id="uncertainty">—</span></p>
+    </div>
+    <!-- ===== End App ===== -->
+
   </section>
+
+  <script src="app.js"></script>
 </body>
 </html>
