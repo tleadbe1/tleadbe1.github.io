@@ -56,11 +56,55 @@ function stdDev(values) {
   return Math.sqrt(variance);
 }
 
+// ===========================================
+// Translate times from courses to state times
+// ===========================================
+
+function compTimes(time,course) {
+  if (course === 1) {
+    return  [time*.956457 + 93.4861,time*0.030158]
+  } else if (course === 2) { 
+    return [time*1.41337 + 99.3883,time*0.0452319]
+  } else if (course === 3) {
+    return [time*0.933274 + 70.8717,time*0.0172409]
+  } else if (course === 4) {
+    return [time*0.900216 + 103.754,time*0.0285823]
+  } else if (course === 5) {
+    return [time*1.001581 + 18.31618,time*0.0233544]
+  } else if (course === 6) {
+    return [time*0.908385 + 86.901663, time*0.0315955]
+  } else if (course === 7) {
+    return [time*0.965143 + 42.78563,time*0.02091025]
+  } else if (course === 8) {
+    return [time*1.094919 -9.91521055,time*0.020439492]
+  } else if (course === 9) {
+    return [time*0.950965446 + 69.367719,time*0.031628831]
+  } else if (course === 10) {
+    return [time*1.0267235 - 10.0231988,time*0.02468759]
+  } else if (course === 11) {
+    return [time*1.4242797 + 77.3506445,time*0.047904107]
+  } else if (course === 12) {
+    return [time*1.003124768 - 2.7617443,time*0.02089123634]
+  } else if (course === 13) {
+    return [time*.9925081 + 7.09019145,time*0.0211309]
+  } else if (course === 14) {
+    return [time*1.0075665 + 9.0181786,time*0.027571705]
+  } else if (course === 15) {
+    return [time*.967820133 + 24.47675622,time*0.02437042755]
+  } else if (course === 16) {
+    return [time*.96349 + 0.4132932,time*0.0196473709]
+  } else {
+    return [Null,Null]
+  }
+}
+
+
 // ===============================
 // Main button handler
 // ===============================
 document.getElementById("predict-btn").addEventListener("click", () => {
   const times = [];
+  const uncertainties = [];
 
   for (let i = 1; i <= 6; i++) {
     const course = document.getElementById(`course-${i}`).value;
@@ -68,14 +112,15 @@ document.getElementById("predict-btn").addEventListener("click", () => {
 
     if (!course || !timeStr) continue;
 
-    const seconds = parseTimeToSeconds(timeStr);
+    const [seconds,uncert] = compTimes(parseTimeToSeconds(timeStr),course);
 
     if (seconds === null) {
-      alert(`Invalid time format in row ${i}. Use hh:mm:ss or mm:ss`);
+      alert(`Invalid time format or course chosen in row ${i}. Use hh:mm:ss or mm:ss`);
       return;
     }
 
     times.push(seconds);
+    uncertainties.push(uncert);
   }
 
   if (times.length === 0) {
