@@ -107,7 +107,7 @@ document.getElementById("predict-btn").addEventListener("click", () => {
   const uncertainties = [];
 
   for (let i = 1; i <= 6; i++) {
-    const course = document.getElementById(`course-${i}`).value;
+    const course = Number(document.getElementById(`course-${i}`).value);
     const timeStr = document.getElementById(`time-${i}`).value;
 
     if (!course || !timeStr) continue;
