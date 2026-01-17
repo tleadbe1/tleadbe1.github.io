@@ -62,7 +62,7 @@ function stdDev(values) {
 document.getElementById("predict-btn").addEventListener("click", () => {
   const times = [];
 
-  for (let i = 1; i <= 5; i++) {
+  for (let i = 1; i <= 6; i++) {
     const course = document.getElementById(`course-${i}`).value;
     const timeStr = document.getElementById(`time-${i}`).value;
 
