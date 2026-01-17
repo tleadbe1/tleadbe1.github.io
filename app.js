@@ -119,7 +119,7 @@ document.getElementById("predict-btn").addEventListener("click", () => {
       return;
     }
 
-    const [seconds,uncert] = compTime(parsedTime,course);
+    const [seconds,uncert] = compTimes(parsedTime,course);
 
     if (seconds === null) {
       alert(`Invalid course chosen in row ${i}.`);
