@@ -94,7 +94,7 @@ function compTimes(time,course) {
   } else if (course === 16) {
     return [time*.96349 + 0.4132932,time*0.0196473709]
   } else {
-    return [Null,Null]
+    return [null,null]
   }
 }
 
