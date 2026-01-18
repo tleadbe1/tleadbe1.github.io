@@ -57,7 +57,7 @@ function stdDev(values) {
 }
 
 function min(values) {
-  return values.reduce((a,b) => a < b ? a : b,0)
+  return values.reduce((a,b) => a < b ? a : b,values[0])
 }
 
 // ===========================================
