@@ -56,10 +56,6 @@ function stdDev(values) {
   return Math.sqrt(variance);
 }
 
-function min(values) {
-  return values.reduce((a,b) => a < b ? a : b,values[0])
-}
-
 // ===========================================
 // Translate times from courses to state times
 // ===========================================
@@ -139,7 +135,7 @@ document.getElementById("predict-btn").addEventListener("click", () => {
   }
 
   
-  const predicted = min(times);
+  const predicted = Math.min(...times);
   const uncertainty = mean(uncertainties);
 
   // ===============================
