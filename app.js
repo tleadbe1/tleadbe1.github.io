@@ -56,6 +56,10 @@ function stdDev(values) {
   return Math.sqrt(variance);
 }
 
+function min(values) {
+  return values.reduce((a,b) => a < b ? a : b,0)
+}
+
 // ===========================================
 // Translate times from courses to state times
 // ===========================================
@@ -134,12 +138,9 @@ document.getElementById("predict-btn").addEventListener("click", () => {
     return;
   }
 
-  // ===============================
-  // Placeholder prediction logic
-  // Replace this later with your model
-  // ===============================
-  const predicted = mean(times);
-  const uncertainty = stdDev(times);
+  
+  const predicted = min(times);
+  const uncertainty = mean(uncertainties);
 
   // ===============================
   // Display results
