@@ -27,7 +27,7 @@ function parseTimeToSeconds(timeStr) {
 // ===============================
 // Utility: seconds → hh:mm:ss
 // ===============================
-function formatSeconds(seconds) {
+function formatSeconds(seconds,uncert) {
   seconds = Math.round(seconds);
 
   const h = Math.floor(seconds / 3600);
@@ -35,26 +35,17 @@ function formatSeconds(seconds) {
   const s = seconds % 60;
 
   return [
-    h > 0 ? h : null,
+    h > 0 ? String(h).padStart(2,"0") : null,
     String(m).padStart(2, "0"),
     String(s).padStart(2, "0"),
   ]
     .filter(Boolean)
+    .join(":") + " +/- " + 
+    [h > 0 ? "00" : null,"00",String(uncert).padStart(2,"0")]
+    .filter(Boolean)
     .join(":");
 }
 
-// ===============================
-// Compute mean and std deviation
-// ===============================
-function mean(values) {
-  return values.reduce((a, b) => a + b, 0) / values.length;
-}
-
-function stdDev(values) {
-  const avg = mean(values);
-  const variance = mean(values.map(v => (v - avg) ** 2));
-  return Math.sqrt(variance);
-}
 
 // ===========================================
 // Translate times from courses to state times
@@ -118,26 +109,8 @@ document.getElementById("predict-btn").addEventListener("click", () => {
     if (seconds === null) {
       alert(`Invalid course chosen in row ${i}.`);
     }
+    document.getElementById(`predicted-time-${i}`).textContent = formatSeconds(seconds,uncert);
 
-    times.push(seconds);
-    uncertainties.push(uncert);
   }
 
-  if (times.length === 0) {
-    alert("Please enter at least one race time.");
-    return;
-  }
-
-  
-  const predicted = Math.min(...times);
-  const uncertainty = mean(uncertainties);
-
-  // ===============================
-  // Display results
-  // ===============================
-  document.getElementById("predicted-time").textContent =
-    formatSeconds(predicted);
-
-  document.getElementById("uncertainty").textContent =
-    "± " + formatSeconds(uncertainty);
 });
