@@ -100,7 +100,7 @@ document.getElementById("predict-btn").addEventListener("click", () => {
   const times = [];
   const uncertainties = [];
 
-  for (let i = 1; i <= 6; i++) {
+  for (let i = 1; i <= 3; i++) {
     const course = Number(document.getElementById(`course-${i}`).value);
     const timeStr = document.getElementById(`time-${i}`).value;
 
