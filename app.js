@@ -62,37 +62,31 @@ function stdDev(values) {
 
 function compTimes(time,course) {
   if (course === 1) {
-    return  [time*.956457 + 93.4861,time*0.030158]
+    return  [time*1.01,60]
   } else if (course === 2) { 
-    return [time*1.41337 + 99.3883,time*0.0452319]
+    return [time*1.557,30]
   } else if (course === 3) {
-    return [time*0.933274 + 70.8717,time*0.0172409]
+    return [time*0.998,35]
   } else if (course === 4) {
-    return [time*0.900216 + 103.754,time*0.0285823]
+    return [time*1.02,30]
   } else if (course === 5) {
-    return [time*1.001581 + 18.31618,time*0.0233544]
+    return [time*.979,50]
   } else if (course === 6) {
-    return [time*0.908385 + 86.901663, time*0.0315955]
+    return [time*1.007,25]
   } else if (course === 7) {
-    return [time*0.965143 + 42.78563,time*0.02091025]
+    return [time*1.088,25]
   } else if (course === 8) {
-    return [time*1.094919 -9.91521055,time*0.020439492]
+    return [time*1.02,30]
   } else if (course === 9) {
-    return [time*0.950965446 + 69.367719,time*0.031628831]
+    return [time*1.001,60]
   } else if (course === 10) {
-    return [time*1.0267235 - 10.0231988,time*0.02468759]
+    return [time*1.005,25]
   } else if (course === 11) {
-    return [time*1.4242797 + 77.3506445,time*0.047904107]
+    return [time*1.014,30]
   } else if (course === 12) {
-    return [time*1.003124768 - 2.7617443,time*0.02089123634]
+    return [time*.993,30]
   } else if (course === 13) {
-    return [time*.9925081 + 7.09019145,time*0.0211309]
-  } else if (course === 14) {
-    return [time*1.0075665 + 9.0181786,time*0.027571705]
-  } else if (course === 15) {
-    return [time*.967820133 + 24.47675622,time*0.02437042755]
-  } else if (course === 16) {
-    return [time*.96349 + 0.4132932,time*0.0196473709]
+    return [time*.993,30]
   } else {
     return [null,null]
   }
