@@ -1,2 +1,2 @@
 ### Personal website
-If I had known it was this easy to host a simple website via GitHub, I would have done it a long time ago... 
+
