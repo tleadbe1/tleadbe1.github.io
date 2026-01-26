@@ -69,7 +69,7 @@ function compTimes(time,course) {
   } else if (course === 8) {
     return [time*1.02,30]
   } else if (course === 9) {
-    return [time*1.001,60]
+    return [time*1.022,40]
   } else if (course === 10) {
     return [time*1.005,25]
   } else if (course === 11) {
